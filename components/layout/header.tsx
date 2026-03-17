@@ -100,18 +100,32 @@ export function Header() {
           </span>
         </Link>
 
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
         <nav
           className={`top-nav auto el-tab-box block-1200 ${mobileMenuOpen ? "menu-open" : ""}`}
           id="TopNav"
           role="navigation"
           aria-label="Primary"
+          onClick={(e) => {
+            if ((e.target as HTMLElement).tagName === "A") setMobileMenuOpen(false);
+          }}
         >
+          <button
+            type="button"
+            className="mobile-nav-close show-1200"
+            aria-label="Close menu"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
           <ul className="nlf-center block-1200" role="menu">
             {navItems.map((item) => (
               <NavItem key={item.href + item.label} item={item} />
             ))}
             <li className="nlf-wrap-middle rel show-1200" role="menuitem">
-              <Link href="#Contact">{labels.contact}</Link>
+              <Link href="#Contact" onClick={() => setMobileMenuOpen(false)}>{labels.contact}</Link>
             </li>
           </ul>
 

@@ -2140,6 +2140,14 @@ h1, h2, h3, h4, h5 {
 .menu-btn {
   margin-left: 0;
 }
+.mobile-nav-close {
+  position: absolute;
+  top: 1.5rem;
+  right: var(--horizontal-spacing);
+  color: rgb(var(--white));
+  z-index: 30;
+  padding: 0.5rem;
+}
 
 .menu-btn span {
   position: relative;
