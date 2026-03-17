@@ -29,7 +29,7 @@
 
 html {
   overflow-x: hidden;
-  font-size: 0.9375vw;
+  font-size: clamp(14px, 0.9375vw, 22px);
   text-size-adjust: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -517,6 +517,13 @@ h1, h2, h3, h4, h5 {
   .hero-v2-ctas { flex-direction: column; }
   .hero-v2-ctas .btn { width: 100%; }
   .hero-watermark span { font-size: 35vw; }
+}
+@media screen and (max-width: 375px) {
+  .hero-word { font-size: 2.8rem; }
+  .hero-above { font-size: 0.95rem; }
+  .hero-below { font-size: 1.1rem; }
+  .hero-v2-desc { font-size: 0.8rem; }
+  .hero-divider { width: 6rem; }
 }
 
 /* ========== Results Feed (Results_FeedV1) from mockup ========== */
@@ -1586,13 +1593,18 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 1000px) {
   .reviews.v1 .reviews-layout { flex-direction: column; min-height: auto; }
   .reviews.v1 .reviews-image { flex: 0 0 auto; max-width: 100%; height: 22rem; }
-  .reviews.v1 .reviews-content { padding: 2rem var(--gap); }
+  .reviews.v1 .reviews-content { padding: 2rem var(--horizontal-spacing); }
   .reviews.v1 header h2 { font-size: 3.5rem; }
   .reviews.v1 blockquote { font-size: 1.1rem; }
+  .reviews.v1 .reviews-nav { justify-content: center; }
+  .reviews.v1 .reviews-nav button { width: 2.5rem; height: 2.5rem; }
 }
 @media (max-width: 550px) {
   .reviews.v1 header h2 { font-size: 2.5rem; }
-  .reviews.v1 .reviews-image { height: 18rem; }
+  .reviews.v1 .reviews-image { height: 14rem; }
+  .reviews.v1 .reviews-nav button { width: 2rem; height: 2rem; }
+  .reviews.v1 .reviews-dots { gap: 0.35rem; }
+  .reviews.v1 .reviews-dot { width: 0.4rem; height: 0.4rem; }
 }
 
 /* ========== Awards & Media (Awards_Media) ========== */
@@ -1620,7 +1632,7 @@ h1, h2, h3, h4, h5 {
 .practices.v1 .practices-header .two-fifths { flex: 0 1 35%; max-width: 35%; display: flex; flex-direction: column; justify-content: center; }
 .practices.v1 .practices-header .two-fifths p { margin: 0 0 1.5rem; color: rgb(var(--white)); line-height: 1.6; font-size: 1.4rem; font-family: var(--secondary-font); }
 .practices.v1 .practices-header .two-fifths .btn { /* uses btn-outline */ }
-.practices.v1 .practices-nav { display: flex; gap: 0; margin-top: 2.5rem; min-height: 70vh; overflow: hidden; max-width: none; width: 100vw; margin-left: calc(-1 * var(--gap)); margin-right: calc(-1 * var(--gap)); }
+.practices.v1 .practices-nav { display: flex; gap: 0; margin-top: 2.5rem; min-height: 70vh; overflow: hidden; max-width: none; width: calc(100% + var(--horizontal-spacing) * 2); margin-left: calc(-1 * var(--horizontal-spacing)); margin-right: calc(-1 * var(--horizontal-spacing)); }
 .practices.v1 .practice-card { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 70vh; overflow: hidden; color: inherit; text-decoration: none; border-radius: 0; position: relative; transition: flex 0.5s ease; }
 .practices.v1 .practice-card:hover { flex: 2; }
 .practices.v1 .practice-card-bg { position: absolute; inset: 0; transition: transform 0.5s ease; }
