@@ -2118,8 +2118,27 @@ h1, h2, h3, h4, h5 {
   padding: 2.189em 1.714em;
 }
 
+.mobile-header-right {
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+.mobile-phone-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--primary), 0.4);
+  color: rgb(var(--secondary));
+  transition: background 0.2s;
+}
+.mobile-phone-btn:hover {
+  background: rgba(var(--white), 0.05);
+}
 .menu-btn {
-  margin-left: var(--horizontal-spacing);
+  margin-left: 0;
 }
 
 .menu-btn span {
@@ -2260,22 +2279,14 @@ h1, h2, h3, h4, h5 {
     visibility: hidden !important;
   }
   .masthead {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-top: 1rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
   .top-nav {
     font-size: inherit;
   }
   .masthead .contact-info {
-    order: -1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-    border-bottom: solid 1px rgba(var(--white), 0.1);
   }
   .masthead .contact-info strong {
     padding: 0;
